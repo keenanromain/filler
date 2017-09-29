@@ -6,7 +6,7 @@
 #    By: kromain <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 15:05:07 by kromain           #+#    #+#              #
-#    Updated: 2017/09/25 15:53:36 by kromain          ###   ########.fr        #
+#    Updated: 2017/09/29 15:40:16 by kromain          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,11 @@ NAME = filler.a
 FLAGS = -Wall -Wextra -Werror
 
 PROJECT = \
-		main.c				\
-		filler.c 			\
-		algo.c
+		filler.c			\
+		allocate.c 			\
+		deallocate.c		\
+		validate.c			\
+		place.c
 
 LIB = \
 		ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c	\

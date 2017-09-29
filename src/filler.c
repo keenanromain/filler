@@ -9,19 +9,23 @@ int		clean_up(t_fill *f)
 
 int		dont_play(void)
 {
-	ft_putstr_fd("Well, this is embarrassing.\n", 2);
+	ft_putstr_fd("Umm, this is awkward.\n", 2);
 	return (-1);
 }
 
 int		play(t_fill *f)
 {
-	if (f->turn)
-		fill_map(f);
-	else if (!f->turn && (f->turn = 1) == 1)
+	if (get_right_line("01234"))
 		fill_map(f);
 	allocate_shape(f);
 	fill_shape(f);
-	return (valid_move(f) ? play(f) : clean_up(f));
+	if (valid_move(f)) 
+	{
+		get_right_line("Plateau");
+		empty_shape(f);
+		return (play(f));
+	}
+	return (clean_up(f));
 }
 
 int		main(int ac, char **av)
@@ -29,8 +33,8 @@ int		main(int ac, char **av)
 	t_fill f;
 
 	ft_memset(&f, 0, sizeof(f));
-	f.type = 'X';
-	if (ft_strstr(get_right_line("$$$"), "p1") && (f.turn = 1))
-		f.type = '0';
+	f.c = 'X';
+	if (ft_strstr(get_right_line("$$$"), "p1"))
+		f.c = '0';
 	return (allocate_map(&f) ? play(&f) : dont_play());
 }

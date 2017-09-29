@@ -5,10 +5,9 @@
 
 typedef struct	s_fill
 {
-	int			turn;
 	char		**map;
 	char		**shape;
-	char		type;
+	char		c;
 	int			h; // height for shape;
 	int			w; // width for shape;
 	int			y; // height for map;
