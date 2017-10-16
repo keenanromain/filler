@@ -68,6 +68,6 @@ int		main(int ac, char **av)
 	ft_memset(&f, 0, sizeof(f));
 	f.c = 'X';
 	if (ft_strstr(get_right_line("$$$"), "p1"))
-		f.c = '0';
+		f.c = 'O';
 	return (allocate_map(&f) ? play(&f) : dont_play());
 }
