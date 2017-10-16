@@ -6,7 +6,7 @@
 #    By: kromain <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 15:05:07 by kromain           #+#    #+#              #
-#    Updated: 2017/09/29 15:40:16 by kromain          ###   ########.fr        #
+#    Updated: 2017/10/15 19:35:53 by kromain          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,9 @@ NAME = filler.a
 FLAGS = -Wall -Wextra -Werror
 
 PROJECT = \
-		filler.c			\
-		allocate.c 			\
-		deallocate.c		\
-		validate.c			\
+		filler.c		\
+		pop.c 			\
+		dump.c			\
 		place.c
 
 LIB = \

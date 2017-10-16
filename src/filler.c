@@ -1,9 +1,23 @@
 #include "filler.h"
 
-int		clean_up(t_fill *f)
+char	*get_right_line(char *s)
 {
-	place_move(0, 0);
-	deallocate(f);
+	char *line;
+
+	while (get_next_line(0, &line))
+	{
+		if (ft_strstr(line, s))
+			return (line);
+		ft_strdel(&line);
+	}
+	return (NULL);
+}
+
+int		done(t_fill *f)
+{
+	ft_printf("%d %d \n", 0, 0);
+	dump_shape(t_fill *f);
+	dump_map(t_fill *f);
 	return (0);
 }
 
@@ -15,19 +29,38 @@ int		dont_play(void)
 
 int		play(t_fill *f)
 {
+	while (1)
+	{
+		if (get_right_line("01234"))
+			fill_map(f);
+		alloc_shape(f);
+		pop_shape(f);
+		if (!valid_move(f))
+		{
+			get_right_line("Plateau");
+			dump_shape(f);
+			continue ;
+		}
+		break ;
+	}
+	return (done(f));
+}
+/*
+int		play(t_fill *f)
+{
 	if (get_right_line("01234"))
 		fill_map(f);
-	allocate_shape(f);
-	fill_shape(f);
-	if (valid_move(f)) 
+	alloc_shape(f);
+	pop_shape(f);
+	if (!valid_move(f))
 	{
 		get_right_line("Plateau");
-		empty_shape(f);
+		dump_shape(f);
 		return (play(f));
 	}
-	return (clean_up(f));
+	return (done(f));
 }
-
+*/
 int		main(int ac, char **av)
 {
 	t_fill f;

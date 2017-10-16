@@ -1,20 +1,6 @@
 #include "filler.h"
 
-char	*get_right_line(char *s)
-{
-	char *line;
-
-	while (get_next_line(0, &line))
-	{
-		if (ft_strstr(line, s))
-			return (line);
-		else
-			ft_strdel(&line);
-	}
-	return (NULL);
-}
-
-void	fill_shape(t_fill *f)
+void	pop_shape(t_fill *f)
 {
 	char *line;
 	int i;
@@ -31,7 +17,7 @@ void	fill_shape(t_fill *f)
 	}
 }
 
-int		allocate_shape(t_fill *f)
+int		alloc_shape(t_fill *f)
 {
 	char *line;
 	char **s;
@@ -55,7 +41,7 @@ int		allocate_shape(t_fill *f)
 	return (0);
 }
 
-void	fill_map(t_fill *f)
+void	pop_map(t_fill *f)
 {
 	char *line;
 	char **s;
@@ -75,7 +61,7 @@ void	fill_map(t_fill *f)
 	}
 }
 
-int		allocate_map(t_fill *f)
+int		alloc_map(t_fill *f)
 {
 	char	*line;
 	char	**s;

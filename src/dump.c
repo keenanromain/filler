@@ -1,6 +1,6 @@
 #include "filler.h"
 
-void	empty_shape(t_fill *f)
+void	dump_shape(t_fill *f)
 {
 	int j;
 
@@ -13,7 +13,7 @@ void	empty_shape(t_fill *f)
 	}
 }
 
-void	empty_map(t_fill *f)
+void	dump_map(t_fill *f)
 {
 	int i;
 
@@ -24,10 +24,4 @@ void	empty_map(t_fill *f)
 			free(f->map[i]);
 		free(f->map);
 	}
-}
-
-void	deallocate(t_fill *f)
-{
-	empty_shape(t_fill *f);
-	empty_map(t_fill *f);
 }
