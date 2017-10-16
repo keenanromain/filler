@@ -28,7 +28,11 @@ int		valid_move(t_fill *f)
 				if (set(f, check_before_placing(f)))
 					ft_printf("%d %d\n", y, x);
 				else
+				{
 					ft_printf("Issue placing piece onto board");
+					continue ;
+				}
+				return (1);
 			}
 			// where the function priority or not does the
 			// heavy lifting for creating the quadrants
@@ -42,4 +46,5 @@ int		valid_move(t_fill *f)
 			// project is done.
 		}
 	}
+	return (0);
 }

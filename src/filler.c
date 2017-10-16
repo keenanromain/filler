@@ -35,7 +35,7 @@ int		play(t_fill *f)
 			fill_map(f);
 		alloc_shape(f);
 		pop_shape(f);
-		if (!valid_move(f))
+		if (valid_move(f))
 		{
 			get_right_line("Plateau");
 			dump_shape(f);
@@ -52,7 +52,7 @@ int		play(t_fill *f)
 		fill_map(f);
 	alloc_shape(f);
 	pop_shape(f);
-	if (!valid_move(f))
+	if (valid_move(f))
 	{
 		get_right_line("Plateau");
 		dump_shape(f);
