@@ -1,4 +1,16 @@
-#include "filler.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pop.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kromain <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/14 14:09:46 by kromain           #+#    #+#             */
+/*   Updated: 2017/10/11 19:52:22 by kromain          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../inc/filler.h"
 
 void	pop_shape(t_fil *f)
 {
@@ -19,20 +31,20 @@ void	pop_shape(t_fil *f)
 
 int		alloc_shape(t_fil *f)
 {
-	int i;
-	char *line;
-	char **tab;
+	int		i;
+	char	*line;
+	char	**tab;
 
 	line = get_right_line("Piece");
 	tab = ft_strsplit(line, ' ');
 	f->shape_h = ft_atoi(tab[1]);
 	f->shape_w = ft_atoi(tab[2]);
 	if (!(f->shape = (char **)malloc(sizeof(char *) * f->shape_h)))
-		return (0);
+		return (-1);
 	i = -1;
 	while (++i < f->shape_h)
 		if (!(f->shape[i] = (char *)malloc(sizeof(char) * f->shape_w)))
-			return (0);
+			return (-1);
 	ft_strdel(&line);
 	ft_strdel(tab);
 	return (1);
@@ -40,10 +52,10 @@ int		alloc_shape(t_fil *f)
 
 void	pop_map(t_fil *f)
 {
-	int i;
-	int j;
-	char *line;
-	char **tab;
+	int		i;
+	int		j;
+	char	*line;
+	char	**tab;
 
 	i = -1;
 	while (++i < f->map_h)
@@ -69,11 +81,11 @@ int		alloc_map(t_fil *f)
 	f->map_h = ft_atoi(tab[1]);
 	f->map_w = ft_atoi(tab[2]);
 	if (!(f->map = (char **)malloc(sizeof(char *) * f->map_h)))
-		return (0);
+		return (-1);
 	i = -1;
 	while (++i < f->map_h)
 		if (!(f->map[i] = (char *)malloc(sizeof(char) * f->map_w)))
-			return (0);
+			return (-1);
 	ft_strdel(&line);
 	ft_strdel(tab);
 	return (1);

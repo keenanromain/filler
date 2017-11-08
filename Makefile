@@ -12,7 +12,7 @@
 
 NAME = filler
 
-SRC = filler.c pop.c move.c dump.c
+SRC = src/filler.c src/pop.c src/move.c src/dump.c
 
 SRCO = $(SRC:.c=.0)
 
