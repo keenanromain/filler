@@ -6,13 +6,13 @@
 #    By: kromain <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/17 15:05:07 by kromain           #+#    #+#              #
-#    Updated: 2017/10/15 19:35:53 by kromain          ###   ########.fr        #
+#    Updated: 2017/11/08 23:29:39 by kromain          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = filler
+NAME = kromain.filler
 
-SRC = src/filler.c src/pop.c src/move.c src/dump.c
+SRC = src/*.c
 
 SRCO = $(SRC:.c=.0)
 
@@ -30,7 +30,7 @@ $(NAME):
 	@echo " |__|  |__|____/____/\_____>__|   "
 	@echo "						   \033[0m "
 	make -C	libft/ fclean && make -C libft/
-	clang $(FLAGS) $(NAME) $(SRC) libft/libft.a
+	clang $(FLAGS) $(NAME) $(SRC) -g libft/libft.a
 	@echo "                              "
 	@echo "\033[01;39mFinished making filler. Available Makefile commands:\033[0m"
 	@echo "\033[01;39m - make\033[0m"

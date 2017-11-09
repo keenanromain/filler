@@ -6,7 +6,7 @@
 /*   By: kromain <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 14:09:46 by kromain           #+#    #+#             */
-/*   Updated: 2017/10/11 19:52:22 by kromain          ###   ########.fr       */
+/*   Updated: 2017/11/08 22:34:11 by kromain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,21 @@ int		alloc_map(t_fil *f)
 	ft_strdel(&line);
 	ft_strdel(tab);
 	return (1);
+}
+
+long long int	**alloc_heat(t_fil *f)
+{
+	int i;
+	long long int **heat;
+
+	if (!(heat = (long long int **)malloc(sizeof(long long int *) * f->map_h)))
+		return ((void *)0);
+	i = -1;
+	while (++i < f->map_h)
+	{
+		if (!(heat[i] = (long long int *)malloc(sizeof(long long int) * f->map_w)))
+			return ((void *)0);
+		ft_bzero(heat[i], f->map_h);
+	}
+	return (heat);
 }
