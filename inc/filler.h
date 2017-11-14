@@ -6,7 +6,7 @@
 /*   By: kromain <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 14:09:46 by kromain           #+#    #+#             */
-/*   Updated: 2017/11/12 14:00:30 by kromain          ###   ########.fr       */
+/*   Updated: 2017/11/12 20:57:43 by kromain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@
 # define MAX_2(a, b) ((a > b) ? a : b)
 # define MAX_3(a, b, c) ((a > b) ? MAX_2(a, c) : MAX_2(b, c))
 
-typedef struct		t_fil
+typedef struct		s_fil
 {
 	int				n_rows;
 	int				n_cols;
-	int				start_r;
-	int				start_c;
 	int				last_r;
 	int				last_c;
 	int				mid_r;
@@ -40,30 +38,23 @@ typedef struct		t_fil
 	int				me_num;
 	long long int	opp_min;
 	long long int	me_max;
+	int				turn;
 }					t_fil;
 
-
 int					main(void);
-t_fil				*set_struct(char *line);
-char				*get_right_line(char *s);
-int					update_map(t_fil *f);
-t_fil				*init_map(t_fil *f);
-t_fil				*set_map(t_fil *f);
-long long int		border(int row, int col, t_fil *f);
-t_fil				*flow_br(t_fil *f);
-t_fil				*flow_bl(t_fil *f);
-t_fil				*flow_tr(t_fil *f);
-void				flow_tl(t_fil *f);
-long long int		q1(int row, int col, t_fil *f);
-long long int		q2(int row, int col, t_fil *f);
-long long int		q3(int row, int col, t_fil *f);
-long long int		q4(int row, int col, t_fil *f);
-void				init_piece(t_fil *f);
-void				config_piece(t_fil *f);
+t_fil				*setup_map(char **line);
+int					update_map(t_fil *f, char *line);
+void				init_map(t_fil *f);
+void				heat_fill(t_fil *f);
+long long int		q1(int x, int y, t_fil *f);
+long long int		q2(int x, int y, t_fil *f);
+long long int		q3(int x, int y, t_fil *f);
+long long int		q4(int x, int y, t_fil *f);
+void				init_piece(char **line, t_fil *f);
+void				config_piece(char *line, t_fil *f);
 void				place_piece(t_fil *f);
-int					verify_possible(t_fil *f, int map_row, int map_col);
-long long int		verify_value(t_fil *f, int map_row, int map_col);
-void				clean_piece(t_fil *f);
-//void				clean_map(t_fil *f);
+void				reset_piece(t_fil *f);
+int					verify_valid(t_fil *f, int map_x, int map_y);
+long long int		verify_ideal(t_fil *f, int map_x, int map_y);
 
 #endif

@@ -6,61 +6,59 @@
 /*   By: kromain <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 14:09:46 by kromain           #+#    #+#             */
-/*   Updated: 2017/11/12 13:59:32 by kromain          ###   ########.fr       */
+/*   Updated: 2017/11/12 21:48:04 by kromain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/filler.h"
 
-int					verify_possible(t_fil *f, int map_r, int map_c)
+int			verify_valid(t_fil *f, int map_x, int map_y)
 {
-	int				touches;
-	int				x;
-	int				y;
-	int				tmp;
+	int	touches;
+	int	p_x;
+	int	p_y;
+	int	tmp;
 
 	touches = 0;
-	tmp = map_c;
-	x = -1;
-	while (++x < f->piece_r)
+	tmp = map_y;
+	p_x = -1;
+	while (++p_x < f->piece_r)
 	{
-		map_c = tmp - 1;
-		y = -1;
-		while (++y < f->piece_c && ++map_c)
+		map_y = tmp - 1;
+		p_y = -1;
+		while (++p_y < f->piece_c && ++map_y)
 		{
-			if (f->map[map_r][map_c] < 0 && f->piece[x][y] == f->me_max)
+			if (f->map[map_x][map_y] < 0 && f->piece[p_x][p_y] == f->me_max)
 				return (0);
-			if (f->map[map_r][map_c] == f->me_max)
-				if (f->piece[x][y] == f->me_max)
+			if (f->map[map_x][map_y] == f->me_max)
+				if (f->piece[p_x][p_y] == f->me_max)
 					touches++;
 		}
-		map_r++;
+		map_x++;
 	}
 	return (touches == 1 ? 1 : 0);
 }
 
-long long			verify_value(t_fil *f, int map_row, int map_col)
+long long	verify_ideal(t_fil *f, int map_x, int map_y)
 {
-	int				piece_row;
-	int				piece_col;
-	long long int	heat;
-	int				col_start;
+	int				p_x;
+	int				p_y;
+	long long int	ideal;
+	int				tmp;
 
-	piece_row = 0;
-	heat = 0;
-	col_start = map_col;
-	piece_row = -1;
-	while (++piece_row < f->piece_r)
+	ideal = 0;
+	tmp = map_y;
+	p_x = -1;
+	while (++p_x < f->piece_r)
 	{
-		map_col = col_start;
-		piece_col = -1;
-		while (++piece_col < f->piece_c)
+		map_y = tmp - 1;
+		p_y = -1;
+		while (++p_y < f->piece_c && ++map_y)
 		{
-			if (f->piece[piece_row][piece_col] == f->me_max)
-				heat += f->map[map_row][map_col];
-			map_col += 1;
+			if (f->piece[p_x][p_y] == f->me_max)
+				ideal += f->map[map_x][map_y];
 		}
-		map_row += 1;
+		map_x++;
 	}
-	return (heat);
+	return (ideal);
 }

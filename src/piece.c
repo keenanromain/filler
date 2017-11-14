@@ -6,24 +6,21 @@
 /*   By: kromain <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 14:09:46 by kromain           #+#    #+#             */
-/*   Updated: 2017/11/12 13:59:10 by kromain          ###   ########.fr       */
+/*   Updated: 2017/11/12 22:10:35 by kromain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/filler.h"
 
-void				init_piece(t_fil *f)
+void	init_piece(char **line, t_fil *f)
 {
-	int				row;
-	char			*line;
-	char			**tab;
+	int	i;
+	int	row;
 
-	line = get_right_line("Piece");
-	tab = ft_strsplit(line, ' ');
-	f->piece_r = ft_atoi(tab[1]);
-	f->piece_c = ft_atoi(tab[2]);
-	ft_strdel(&line);
-	ft_strdel(tab);
+	i = 6;
+	f->piece_r = ft_atoi(&line[0][i]);
+	i += ft_digitnum(f->piece_r) + 1;
+	f->piece_c = ft_atoi(&line[0][i]);
 	f->piece = malloc(sizeof(long long *) * f->piece_r);
 	ft_bzero(f->piece, f->piece_r);
 	row = -1;
@@ -31,53 +28,57 @@ void				init_piece(t_fil *f)
 		f->piece[row] = ft_memalloc(sizeof(long long) * f->piece_c);
 }
 
-void				config_piece(t_fil *f)
+void	config_piece(char *line, t_fil *f)
 {
-	int				row;
-	int				i;
-	char			*line;
+	int row;
+	int i;
 
 	row = -1;
 	while (++row < f->piece_r)
 	{
-		i = -1;
 		get_next_line(0, &line);
+		i = -1;
 		while (line[++i])
-			f->piece[row][i] = line[i] == '.' ? 0 : f->me_max;
-		ft_strdel(&line);
-	}
-}
-
-void				place_piece(t_fil *f)
-{
-	int				row;
-	int				col;
-	long long int	poss;
-	long long		best;
-
-	poss = 0;
-	best = 0;
-	row = -1;
-	while (++row < f->last_r)
-	{
-		col = -1;
-		while (++col < f->last_c)
 		{
-			if (verify_possible(f, row, col))
-				poss = verify_value(f, row, col);
-			if (MAX_2(poss, best) != best)
-			{
-				f->best_r = row;
-				f->best_c = col;
-				best = poss;
-			}
+			if (line[i] == '.')
+				f->piece[row][i] = 0;
+			else
+				f->piece[row][i] = f->me_max;
 		}
 	}
 }
 
-void				clean_piece(t_fil *f)
+void	place_piece(t_fil *f)
 {
-	int				i;
+	int				map_x;
+	int				map_y;
+	long long int	poss;
+	long long int	best;
+
+	poss = 0;
+	best = 0;
+	map_x = -1;
+	while (++map_x < f->last_r)
+	{
+		map_y = -1;
+		while (++map_y < f->last_c)
+		{
+			if (verify_valid(f, map_x, map_y))
+				poss = verify_ideal(f, map_x, map_y);
+			if (MAX_2(poss, best) != best)
+			{
+				f->best_r = map_x;
+				f->best_c = map_y;
+				best = poss;
+			}
+		}
+	}
+	ft_printf("%d %d\n", f->best_r - 1, f->best_c - 1);
+}
+
+void	reset_piece(t_fil *f)
+{
+	int	i;
 
 	i = -1;
 	if (f->piece)
@@ -88,4 +89,5 @@ void				clean_piece(t_fil *f)
 		f->best_c = 0;
 		free(f->piece);
 	}
+	f->turn++;
 }
