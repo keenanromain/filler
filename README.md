@@ -5,11 +5,11 @@ filler
 
 ## Implementation
 
-Usage:
+Example Usage:
 
 Once inside the resources directory, the project can be run in the following format: 
 
-./filler_vm -f maps/* -p1 players/*.filler -p2 ../kromain.filler
+./filler_vm -f maps/map02 -p1 players/carli.filler -p2 ../kromain.filler
 
 
 ## Acknowledgement
