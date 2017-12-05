@@ -9,7 +9,8 @@ The purpose of filler is to create a competitive AI that succeeds in placing a h
 
 Example of terminal command and virtual machine output
 
-![screenshot from 2017-12-04 14-52-28](https://user-images.githubusercontent.com/13093517/33580656-db83bc2e-d902-11e7-8f79-ac69380f312d.png)
+![screenshot from 2017-12-04 16-59-06](https://user-images.githubusercontent.com/13093517/33584510-9b4d4b5e-d914-11e7-9348-7a9bb2fc1ab8.png)
+
 
 ## Key Details
 
