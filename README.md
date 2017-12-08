@@ -38,9 +38,9 @@ In order to place the game piece on the board, each player must write out it's p
 <br/>
 <sub>The opponent's algorithm and my own continue to trade turns flooding the board until the opponent runs into my barriers and fails to place it's piece in a valid manner as set by the rules. My algorithm wins.</sub>
 <br/><br/></p>
-With this visual demonstration now complete, a review of the code that made it possible is up next. To begin, a peek of main shows the overview functionality of the program. The initial parsing of the map and it's conversion to an integer-based heat-map is done in the function *setup_map*. The function, *update_map*, checks for the opponent's new move at every turn and the placing of each new piece occurs whenever the opponent completed a valid move. Finally, the map is freed before the program ends.
+With this visual demonstration now complete, a review of the code that made it possible is up next. To begin, a peek of main shows the overview functionality of the program. The initial parsing of the map and it's conversion to an integer-based heat-map is done in the function *setup_map*. The function, *update_map*, checks for the opponent's new move at every turn and the placing of each new piece occurs whenever the opponent completed a valid move. Finally, the map is freed before the program ends. <br/>
 
-<img width="305" alt="screen shot 2017-12-05 at 2 53 41 pm" src="https://user-images.githubusercontent.com/13093517/33782285-f5a8256a-dc0c-11e7-8ae7-0102c0ea28bb.png"><img width="386" alt="screen shot 2017-12-05 at 2 54 10 pm" src="https://user-images.githubusercontent.com/13093517/33782638-565abfc0-dc0e-11e7-8ca7-efebc153455b.png">
+<img width="305" alt="screen shot 2017-12-05 at 2 53 41 pm" src="https://user-images.githubusercontent.com/13093517/33782285-f5a8256a-dc0c-11e7-8ae7-0102c0ea28bb.png">
 
 The call to *get_right_line*, a function that loops a custom version of <a href="http://man7.org/linux/man-pages/man3/getline.3.html">getline</a> until the parameter passed to it matches the read input, gives the correct line from the VM output to begin with. This line is passed to *setup_map* as it contains the information of which player is first and which is second.
 
