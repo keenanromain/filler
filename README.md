@@ -38,7 +38,7 @@ In order to place the game piece on the board, each player must write out it's p
 <br/>
 <sub>The opponent's algorithm and my own continue to trade turns flooding the board until the opponent runs into my barriers and fails to place it's piece in a valid manner as set by the rules. My algorithm wins.</sub>
 <br/><br/></p>
-With this visual demonstration now complete, a review of the code that made it possible is up next. To begin, a peek of main shows the overview functionality of the program. The initial parsing of the map and it's conversion to an integer-based heat-map is done in the function *setup_map*. The function, *update_map*, checks for the opponent's new move at every turn and the placing of each new piece occurs whenever the opponent completed a valid move. Finally, the map is freed before the program ends. <br/>
+With this visual demonstration now complete, a review of the code that made it possible is up next. To begin, a peek of main shows the overview functionality of the program. The initial parsing of the map and it's conversion to an integer-based heat-map is done in the function *setup_map*. The function, *update_map*, checks for the opponent's new move at every turn and the placing of each new piece occurs whenever the opponent completed a valid move. Finally, the map is freed before the program ends. <br/><br/>
 
 <img width="305" alt="screen shot 2017-12-05 at 2 53 41 pm" src="https://user-images.githubusercontent.com/13093517/33782285-f5a8256a-dc0c-11e7-8ae7-0102c0ea28bb.png">
 
