@@ -27,7 +27,7 @@ In order of appearance, the VM outputs the map's dimensions, the map itself with
 In order to place the game piece on the board, each player must write out it's preferred coordinates to the standard out which is then received by the VM. To determine said preferred coordinates, the project specifications were entirely open-ended to permit creativity. The solution I came up with used a dynamic heat map for creating a maximum-cost path algorithm in order to place each piece on prime real estate. The algorithm initially prioritized the middle of the board before drawing a cross to limit the mobility of the opponent. From there, the vertical pillar expands outward taking up all open space in cyclical fashion. Before diving into the code, a few screenshots will be displayed of the algorithm in action:
 
 Note: The opponent AI is using the character O to my AI's character X <br/>
-<img width="328" alt="screen shot 2017-12-05 at 2 39 04 pm" src="https://user-images.githubusercontent.com/13093517/33747846-1a75e0c8-db7a-11e7-87b9-a74f9f13dcd7.png">
+<p align="center"><img width="328" alt="screen shot 2017-12-05 at 2 39 04 pm" src="https://user-images.githubusercontent.com/13093517/33747846-1a75e0c8-db7a-11e7-87b9-a74f9f13dcd7.png">
 <br/>
 <sub>This particular opponent's strategy uses a top-down flood-fill approach while my algorithm rushes to the middle, spans upwards and downwards, then left to right in an attempt to set boundaries against the opponent.</sub>
 <br/><br/>
@@ -38,7 +38,7 @@ Note: The opponent AI is using the character O to my AI's character X <br/>
 <img width="319" alt="screen shot 2017-12-05 at 2 42 47 pm" src="https://user-images.githubusercontent.com/13093517/33747844-1a5905de-db7a-11e7-8500-4ffe2e1245f1.png">
 <br/>
 <sub>The opponent's algorithm and my own continue to trade turns flooding the board until the opponent runs into my barriers and fails to place it's piece in a valid manner as set by the rules. My algorithm wins.</sub>
-<br/><br/>
+<br/><br/></p>
 With this visual demonstration now complete, a review of the code that made it possible is up next.
 
 
