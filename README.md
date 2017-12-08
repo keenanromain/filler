@@ -33,10 +33,13 @@ Note: The opponent AI is using the character O to my AI's character X <br/>
 <br/><br/>
 <img width="319" alt="screen shot 2017-12-05 at 2 42 23 pm" src="https://user-images.githubusercontent.com/13093517/33747845-1a69a84e-db7a-11e7-85cb-31551ad792c5.png">
 <br/>
-<sub>The next step to my algorithm is to expand outward via the vertical column in a similar flood-fill manner. The difference of course being the initial step of splitting the board into four separate quadrants to contain the enemy and thus guarantee empty area for it's own exploitation. Note: Pieces read from the VM can include period to denote empty space. Only the asteriks in a piece matter.</sub>
+<sub>The next step to my algorithm is to expand outward via the vertical column in a similar flood-fill manner. The difference of course being the initial step of splitting the board into four separate quadrants to contain the enemy and thus guarantee empty area for it's own exploitation. Note: Pieces read from the VM can include periods to denote empty space. Only the asteriks in a piece matter.</sub>
 <br/><br/>
 <img width="319" alt="screen shot 2017-12-05 at 2 42 47 pm" src="https://user-images.githubusercontent.com/13093517/33747844-1a5905de-db7a-11e7-8500-4ffe2e1245f1.png">
-
+<br/>
+The opponent's algorithm and my own continue to trade turns flooding the board until the opponent runs into my barriers and fails to place it's piece in a valid manner as set by the rules. My algorithm wins.
+<br/><br/>
+With this visual demonstration now complete, a review of the code that made it possible is up next.
 
 
 ## Implementation
