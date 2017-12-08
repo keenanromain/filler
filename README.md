@@ -21,7 +21,7 @@ In order of appearance, the VM outputs the map's dimensions, the map itself with
 
 `
 * 
-`
+` <br/>
 `
 *
 `
