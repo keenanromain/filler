@@ -14,10 +14,10 @@ Example of a command to begin the game and the initial corresponding VM output:
 
 ## Key Details
 
-The initial phase of this project was to become familiar with reading and parsing the filler virtual machine's output. As seen in the screenshot above, the filler_vm is executed with the -f flag to specificy the map for the game to be played on as well as the two different players via the -p1 and -p2 flags. Afterw an initial message of credit to the VM's developers, the game begins.
+The initial phase of this project was to become familiar with reading and parsing the filler virtual machine's output. As seen in the screenshot above, the filler_vm is executed with the -f flag to specificy the map for the game to be played on as well as the two different players via the -p1 and -p2 flags. After an initial message of credit to the VM's developers, the game begins.
 <br />
 <br />
-In order of appearance, the VM outputs the map's dimensions, the map itself with coordinates along both the X-axis and Y-axis, the piece's dimenions, and the piece itself:
+In order of appearance, the VM outputs the map's dimensions, the map itself with coordinates along both the X-axis and Y-axis, the piece's dimenions, and the piece represented in this example as two asteriks:
 
 `
 * 
