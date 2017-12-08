@@ -24,7 +24,7 @@ In order of appearance, the VM outputs the map's dimensions, the map itself with
 ` <br/>
 `
 *
-`
+` <br/>
 In order to place the game piece on the board, each player must write out it's preferred coordinates to the standard out which is then received by the VM. To determine said preferred coordinates however, the specifications were entirely open-ended to permit creativity. The solution I came up with used a dynamic heat map for creating a maximum-cost path algorithm in order to place each piece in prime real estate on the map. The algorithm prioritized the middle of the board and drew a cross to limit the mobility of the opponent. Before diving into the code, a few screenshots will be displayed:
 
 ## Implementation
