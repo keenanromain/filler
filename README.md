@@ -19,8 +19,8 @@ The initial phase of this project was to become familiar with reading and parsin
 <br />
 In order of appearance, the VM outputs the map's dimensions, the map itself with coordinates along both the X-axis and Y-axis, the piece's dimenions, and the piece itself:
 
-/*
-/*
+"*"
+"*"
 
 ## Implementation
 
