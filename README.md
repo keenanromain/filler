@@ -67,6 +67,8 @@ Each coordinate of a quadrant calls a function responsible for computing the alg
 
 <img width="563" alt="screen shot 2017-12-05 at 2 55 32 pm" src="https://user-images.githubusercontent.com/13093517/33783579-3341ec80-dc12-11e7-8dac-23a74ff3fda9.png">
 
+Each cell of the matrix represents a cost, initially one, to traverse through that cell. The total cost of a path to reach the end of it's row is sum of all the costs on that path. To increase the weight towards the middle of the board (in this example, the bottom-right of the lop-left quadrant), the algorithm computes the cost in each cell against the maximum value of the adjacent cells that are further away from the middle and the algorithm incoporates a 10x multiplier for all elements in the exact middle row of the board.
+
 ## Implementation
 
 
