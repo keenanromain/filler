@@ -31,7 +31,6 @@ Note: The opponent AI is using the character O to my AI's character X <br/>
 <br/>
 <sub>This particular opponent's strategy uses a top-down flood-fill approach while my algorithm rushes to the middle, spans upwards and downwards, then left to right in attempt to set boundaries against the opponent.</sub>
 <br/>
-
 <img width="319" alt="screen shot 2017-12-05 at 2 42 23 pm" src="https://user-images.githubusercontent.com/13093517/33747845-1a69a84e-db7a-11e7-85cb-31551ad792c5.png">
 <br/>
 <sub>The next step to my algorithm is to expand outward via the vertical column in a similar flood-fill manner. The difference of course being the initial step of splitting the board into four separate quadrants to contain the enemy and thus guarantee empty area for it's own exploitation.</sub>
