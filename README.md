@@ -42,11 +42,16 @@ With this visual demonstration now complete, a review of the code that made it p
 
 <img width="305" alt="screen shot 2017-12-05 at 2 53 41 pm" src="https://user-images.githubusercontent.com/13093517/33782285-f5a8256a-dc0c-11e7-8ae7-0102c0ea28bb.png">
 
-The call to *get_right_line*, a function that loops a custom version of <a href="http://man7.org/linux/man-pages/man3/getline.3.html">getline</a> until the parameter passed matches the read input, gives the correct line to begin the VM output. This line is passed to *setup_map* as it contains the information of which player is first and which is second.
+The call to *get_right_line*, a function that loops a custom version of <a href="http://man7.org/linux/man-pages/man3/getline.3.html">getline</a> until the parameter passed to it matches the read input, gives the correct line from the VM output to begin with. This line is passed to *setup_map* as it contains the information of which player is first and which is second.
 
 <img width="386" alt="screen shot 2017-12-05 at 2 54 10 pm" src="https://user-images.githubusercontent.com/13093517/33782638-565abfc0-dc0e-11e7-8ca7-efebc153455b.png">
 
-After determining the appropriate values for each player, *get_right_line* is called again to find the dimensions of the map. These values are broken into the numbers of rows and columns required before the rest of the struct for this project is initialized.
+After determining the appropriate values for each player, *get_right_line* is called again to find the dimensions of the map. These values are broken into the numbers of rows and columns required before the rest of the struct for this project is initialized. After the initialization, the creation of the heat map occurs in three steps: 
+<ol>
+  <li>A border around the map is set and the interior of the map is filled with ones as a starting value</li>
+  <li>The map is then split into quadrants to allow the algorithm to work as needed</li>
+  <li>The algorithm runs for each quadrant, modifying the ones into the appropriate numbers for later evaluation</li>
+</ol>
 
 ## Implementation
 
