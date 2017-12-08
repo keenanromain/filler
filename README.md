@@ -63,6 +63,10 @@ bottom-right quadrant as it moes towards the middle:
 
 <img width="376" alt="screen shot 2017-12-05 at 2 58 04 pm" src="https://user-images.githubusercontent.com/13093517/33783408-830e69ba-dc11-11e7-8e70-fe871be18378.png">
 
+Each coordinate of a quadrant calls a function responsible for computing the algorithmic value. *q1*, as seen in *top_left*, shows what the algorithm looks like.
+
+<img width="563" alt="screen shot 2017-12-05 at 2 55 32 pm" src="https://user-images.githubusercontent.com/13093517/33783579-3341ec80-dc12-11e7-8dac-23a74ff3fda9.png">
+
 ## Implementation
 
 
