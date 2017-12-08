@@ -71,11 +71,21 @@ Each cell of the matrix represents a cost, initially one, to traverse through th
 
 ## Implementation
 
+To run this project, clone this repo into your terminal and generate the executable via the make command.
+```
+git clone https://github.com/keenanromain/filler.git
+cd filler
+rm -rf libft
+git clone https://github.com/keenanromain/libft.git
+make
+```
+A successful make command will create an executable called 'kromain.filler'. Navigate into the resouces directory and once inside, the project can be run in the following format:
 
-Once inside the resources directory, the project can be run in the following format: 
 ```
-./filler_vm -f maps/map02 -p1 players/carli.filler -p2 ../kromain.filler
+./filler_vm -f maps/map02 -p1 players/hcao.filler -p2 ../kromain.filler
 ```
+
+The executable for this project can be run either as first or second player and can fight any of the other stock AIs in the players directory on any of the maps.
 
 
 ## Acknowledgement
