@@ -25,6 +25,8 @@ In order of appearance, the VM outputs the map's dimensions, the map itself with
 *
 ` <br/>
 In order to place the game piece on the board, each player must write out it's preferred coordinates to the standard out which is then received by the VM. To determine said preferred coordinates, the project specifications were entirely open-ended to permit creativity. The solution I came up with used a dynamic heat map for creating a maximum-cost path algorithm in order to place each piece on prime real estate. The algorithm initially prioritized the middle of the board before drawing a cross to limit the mobility of the opponent. From there, the vertical pillar expands outward taking up all open space in cyclical fashion. Before diving into the code, a few screenshots will be displayed of the algorithm in action:
+
+Note: The opponent AI is using the character O to my AI's character X
 <img width="328" alt="screen shot 2017-12-05 at 2 39 04 pm" src="https://user-images.githubusercontent.com/13093517/33747846-1a75e0c8-db7a-11e7-87b9-a74f9f13dcd7.png">
 <br/>
 <img width="319" alt="screen shot 2017-12-05 at 2 42 23 pm" src="https://user-images.githubusercontent.com/13093517/33747845-1a69a84e-db7a-11e7-85cb-31551ad792c5.png">
