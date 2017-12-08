@@ -42,9 +42,11 @@ With this visual demonstration now complete, a review of the code that made it p
 
 <img width="305" alt="screen shot 2017-12-05 at 2 53 41 pm" src="https://user-images.githubusercontent.com/13093517/33782285-f5a8256a-dc0c-11e7-8ae7-0102c0ea28bb.png">
 
-The call to *get_right_line*, a function that loops a custom version of <a href="http://man7.org/linux/man-pages/man3/getline.3.html">getline</a> until the parameter passed matches the read input, in main gives the correct line to begin parsing input.
+The call to *get_right_line*, a function that loops a custom version of <a href="http://man7.org/linux/man-pages/man3/getline.3.html">getline</a> until the parameter passed matches the read input, gives the correct line to begin the VM output. This line is passed to *setup_map* as it contains the information of which player is first and which is second.
 
 <img width="386" alt="screen shot 2017-12-05 at 2 54 10 pm" src="https://user-images.githubusercontent.com/13093517/33782638-565abfc0-dc0e-11e7-8ca7-efebc153455b.png">
+
+After determining the appropriate values for each player, *get_right_line* is called again to find the dimensions of the map. These values are broken into the numbers of rows and columns required before the rest of the struct for this project is initialized.
 
 ## Implementation
 
