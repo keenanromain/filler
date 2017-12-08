@@ -55,11 +55,11 @@ After determining the appropriate values for each player, *get_right_line* is ca
 
 Step two is where things get interesting, so that is what will be discussed next. From obtaining the length and width of the map and then splitting those values in half, it's now possible to overlay the heat-map with four different sections. Each quadrant iterates towards the middle of the entire board so the functions responsible for each differ slightly. The first and fourth functions, for example, run in the opposite directions of each other as seen below:
 
-top-left quadrant as it moves towards the middle:
+top-left quadrant iterating towards the middle:
 
 <img width="359" alt="screen shot 2017-12-05 at 2 55 10 pm" src="https://user-images.githubusercontent.com/13093517/33783403-7bcaf4ca-dc11-11e7-8359-d8197da88015.png">
 
-bottom-right quadrant as it moes towards the middle:
+bottom-right quadrant iterating towards the middle:
 
 <img width="376" alt="screen shot 2017-12-05 at 2 58 04 pm" src="https://user-images.githubusercontent.com/13093517/33783408-830e69ba-dc11-11e7-8e70-fe871be18378.png">
 
@@ -79,13 +79,13 @@ rm -rf libft
 git clone https://github.com/keenanromain/libft.git
 make
 ```
-A successful make command will create an executable called 'kromain.filler'. Navigate into the resouces directory and once inside, the project can be run in the following format:
+A successful make command will create an executable called 'kromain.filler'. Navigate into the resouces directory to run the project in the following format:
 
 ```
 ./filler_vm -f maps/map02 -p1 players/hcao.filler -p2 ../kromain.filler
 ```
 
-The executable for this project can be run either as first or second player and can fight any of the other stock AIs in the players directory on any of the maps.
+The executable for this project can be run either as first or second player and can fight any of the stock AIs found in the players directory on any of the maps.
 
 
 ## Acknowledgement
