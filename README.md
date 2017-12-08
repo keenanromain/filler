@@ -37,7 +37,7 @@ Note: The opponent AI is using the character O to my AI's character X <br/>
 <br/><br/>
 <img width="319" alt="screen shot 2017-12-05 at 2 42 47 pm" src="https://user-images.githubusercontent.com/13093517/33747844-1a5905de-db7a-11e7-8500-4ffe2e1245f1.png">
 <br/>
-The opponent's algorithm and my own continue to trade turns flooding the board until the opponent runs into my barriers and fails to place it's piece in a valid manner as set by the rules. My algorithm wins.
+<sub>The opponent's algorithm and my own continue to trade turns flooding the board until the opponent runs into my barriers and fails to place it's piece in a valid manner as set by the rules. My algorithm wins.</sub>
 <br/><br/>
 With this visual demonstration now complete, a review of the code that made it possible is up next.
 
